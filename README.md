@@ -1,29 +1,6 @@
-# Broker Data Parser
+# Broker Parser
 
-A Python package for parsing and transforming financial broker data into structured formats.
-
-## Features
-
-- Parses broker data from CSV and Excel files
-- Supports multiple operation types (Trades, Monetary Flows, Security Flows, Mutual Funds)
-- Handles different data formats and encodings
-- Provides detailed logging and error handling
-- Type-safe implementation with comprehensive type annotations
-
-## Installation
-
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-```python
-from broker_parser import transform_data
-
-# Transform broker data
-transform_data("input.csv", "output.xlsx")
-```
+A collection of Python scripts for parsing and transforming financial broker data from different sources.
 
 ## Project Structure
 
@@ -31,62 +8,57 @@ transform_data("input.csv", "output.xlsx")
 broker_parser/
 ├── src/
 │   └── broker_parser/
-│       ├── __init__.py
-│       ├── parser.py
-│       └── types.py
+│       ├── brokers/           # Broker-specific parsers
+│       │   └── pellegrini/    # Pellegrini broker parser
+│       └── shared/            # Shared utilities and configurations
 ├── tests/
-│   ├── __init__.py
-│   └── test_parser.py
-├── docs/
-│   └── index.rst
-├── config/
-│   └── ruff.toml
-├── requirements.txt
-└── README.md
+│   └── brokers/
+│       └── pellegrini/        # Tests for Pellegrini parser
+├── config/                    # Configuration files
+└── docs/                     # Documentation
+```
+
+## Available Brokers
+
+- Pellegrini
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/manuela-gabriel/broker_parser.git
+cd broker_parser
+```
+
+2. Create and activate a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+Each broker has its own parser module. To use a specific broker parser:
+
+```python
+from broker_parser.brokers.pellegrini.parser import PellegriniParser
+
+parser = PellegriniParser()
+parser.parse_file("path/to/input.csv")
 ```
 
 ## Development
 
-### Setup
-
-1. Clone the repository
-2. Create a virtual environment
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Testing
-
-Run tests with coverage:
-```bash
-pytest --cov=src tests/
-```
-
-### Code Style
-
-The project uses:
-- Ruff for linting
-- Black for code formatting
-- isort for import sorting
-- mypy for type checking
-
-Run all checks:
-```bash
-ruff check .
-black .
-isort .
-mypy .
-```
+- Follow PEP 8 style guide
+- Use type hints
+- Write tests for new features
+- Update documentation
 
 ## License
 
-MIT License
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request 
+MIT License - See LICENSE file for details 
