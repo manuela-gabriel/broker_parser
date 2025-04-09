@@ -1,0 +1,9 @@
+description,trade_date,settlement_date,quantity,security_name,net_amount,commission_type,commission_amount,currency,exchange,date,amount,notes,fund_name
+COMPRA AAPL,2024-04-01,2024-04-03,100,AAPL,15000.00,Comisión del Broker,50.00,USD,BYMA,,,,
+VENTA MSFT,2024-04-02,2024-04-04,50,MSFT,10000.00,Comisión del Mercado,30.00,USD,BYMA,,,,
+DEPOSITO ARS,,,10000.00,,10000.00,,,,,2024-04-03,10000.00,Fondeo ARS,
+RETIRO USD,,,5000.00,,5000.00,,,,,2024-04-04,5000.00,Extracción USD,
+TRANSFERENCIA IN,,,2000.00,,2000.00,,,,,2024-04-05,2000.00,Transferencia recibida,
+TRANSFERENCIA OUT,,,1000.00,,1000.00,,,,,2024-04-06,1000.00,Transferencia enviada,
+SUSCRIPCION FONDO,,,1000.00,Fondo ABC,10000.00,,,,Mercado de Fondos,,,,
+RESCATE FONDO,,,500.00,Fondo XYZ,5000.00,,,,Mercado de Fondos,,,, 
