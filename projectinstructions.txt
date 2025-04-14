@@ -59,7 +59,7 @@ You MUST classify the operation into ONE of the following types and extract the 
 
     *   `security_amount`: (number)
 
-    *   `security_name`: (string, e.g., Ticker or ISIN, if available)
+    *   `security_name`: (string, e.g., Ticker or ISIN, if available) The Ticker is described in the column "Ticker" inside the file "Especies.xlsx", the broker is in the column "Instrumento". Find the Ticker for the broker.
 
     *   `net_payment_amount`: (number)
 
